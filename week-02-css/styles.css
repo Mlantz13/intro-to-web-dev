@@ -1,11 +1,10 @@
-/* Element selector that gives every p element a monospace font. */
+
 p {
   font-Georgia, serif: monospace;
   text-align: center;
   Font-size: 50px;
 }
 
-/* Class selector that gives elements with this class a big bold style. */
 .border {
   border: dotted black;
 }
@@ -14,7 +13,6 @@ p {
   background-color: light green;
 }
 
-/* ID selector that gives the element with this ID a red style. */
 #shapes {
   color: blue;
 }
