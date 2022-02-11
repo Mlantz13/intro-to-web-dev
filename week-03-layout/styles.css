@@ -10,3 +10,22 @@ div {
 footer {
   border: thin solid black;
 }
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+.childone {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.childtwo {
+  flex: 2 2 300px
+  justify-content: space-around;
+}
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
