@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Madlib</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
   </head>
   <body>
+
     <div id="inputs">
-      <div>Give me an adjective: <input id="adjective-one-input" /></div>
+      <div>Give me an adjective: <input id="adjective-one-input"></div>
       <button onclick="fillOutputs();">Done</button>
     </div>
-    <div id="output">
-      The <span id="adjective-one-output"></span> fox jumped over the lazy dog.
+    <div id="output1" style="display: block;">
+      The <span id="adjective-one-output"></span> knight set off on a great quest.
     </div>
+
+	<div id="inputs">
+      <div>Give me a noun: <input id="noun-one-input"></div>
+      <button onclick="fillnounOutput();">Done</button>
+    </div>
+    <div id="output2" style="display: block;">
+      The knight came across the great <span id="noun-one-output"></span> from the east, who was a great warrior.
+    </div>
+
+	<div id="inputs">
+      <div>Give me an adjective ending in -ing: <input id="adjective-two-input"></div>
+      <button onclick="fillAdjectiveTwoOutput();">Done</button>
+    </div>
+    <div id="output3" style="display: block;">
+      Drawing his <span id="adjective-two-output"></span> sword, the knight prepared for battle
+    </div>
+
+	<div id="inputs">
+      <div>Give me the knights battlecry <input id="battlecry-one-input"></div>
+      <button onclick="fillbattlecryOutput();">Done</button>
+    </div>
+    <div id="output4" style="display: block;">
+      The battle was hard fought, but in the end the knight stood victorious and let out a loud battlecry: <span id="battlecry-one-output"></span>
+    </div>
+
+	<div id="inputs">
+      <div>Give me the name of the knights kingdom: <input id="kingdom-one-input"></div>
+      <button onclick="fillkingdomOutput();">Done</button>
+    </div>
+    <div id="output5" style="display: block;">
+      Holding their head high, the knight headed back to his home of <span id="kingdom-one-output"></span> kingdom
+    </div>
+
+
   </body>
 </html>
