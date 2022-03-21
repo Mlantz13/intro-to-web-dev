@@ -78,6 +78,35 @@ function displayMWords() {
     }
   }
 }
+
+function displayLongestWord(){
+  const longestWordElement = document.getElementById('longest-word');
+
+  let longestWord = wordsArray[0];
+
+  for(let i = 1; i < wordsArray.length; i++){
+    if(wordsArray[i].length > longestWord.length){
+      longestWord = wordsArray[i];
+    }
+  }
+  const wordElement = document.createElement('li');
+  wordElement.innerText = longestWord;
+  longestWordElement.appendChild(wordElement);
+}
+
+function displayThirdWords(){
+  const thirdWordsElement = document.getElementById('third-words');
+
+  for(let i = 2; i <= 300; i += 3){
+    const word = wordsArray[i];
+    if(word){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      thirdWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
 // TODO: Define your own functions here!
 
 function displaySpeechStats() {
@@ -88,6 +117,12 @@ function displaySpeechStats() {
   displayShortWords();
 
   displayMWords();
+
+  displayLongestWord();
+
+  displayThirdWords();
+
+  displayUncommonWorld();
 
   // TODO: Call your functions here!
 }
