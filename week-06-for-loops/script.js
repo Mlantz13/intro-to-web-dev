@@ -107,6 +107,21 @@ function displayThirdWords(){
   }
 }
 
+function displayUncommonWords(){
+  let commonWords = ['the' , 'be' , 'to' , 'of' , 'and' , 'a' , 'in' , 'that' , 'have' , 'i' ,
+  'it' , 'for' , 'not' , 'on' , 'with' , 'as' , 'you' , 'do' , 'at'];
+
+  let uncommonWordsElement = document.getElementById('uncommon-words');
+
+  for(let word of wordsArray){
+    if(!commonWords.includes(word.toLowerCase())){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      uncommonWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
 // TODO: Define your own functions here!
 
 function displaySpeechStats() {
@@ -122,7 +137,7 @@ function displaySpeechStats() {
 
   displayThirdWords();
 
-  displayUncommonWorld();
+  displayUncommonWords();
 
   // TODO: Call your functions here!
 }
