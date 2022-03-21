@@ -1,12 +1,29 @@
 // Replace this speeh with your own.
 // Notice the `` backticks, which let you split your string into multiple lines.
-const speech = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.`;
+const speech = `I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side
+With your hands between your thighs
+Stop and wait a sec
+When you look at me like that, my darlin', what did you expect?
+I'd probably still adore you with your hands around my neck
+Or I did last time I checked
+Not shy of a spark
+The knife twists at the thought that I should fall short of the mark
+Frightened by the bite, though it's no harsher than the bark
+The middle of adventure, such a perfect place to start
+I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side
+With your hands between your thighs
+But I crumble completely when you cry
+It seems like once again you've had to greet me with goodbye
+I'm always just about to go and spoil a surprise
+Take my hands off of your eyes too soon
+I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side
+With your hands between your thighs and a smile`;
 
 // Remove punctuation from the speech. You might have to modify this if your
 // speech contains other punctuation.
@@ -33,12 +50,44 @@ function displayLongWords() {
   }
 }
 
+function displayShortWords() {
+  const shortWordsElement = document.getElementById('short-words');
+
+  for(let i = 0; i < wordsArray.length; i++) {
+    const word = wordsArray[i];
+    console.log(word);
+    if(word.length <= 3) {
+
+      console.log('less than 4!');
+
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      shortWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
+function displayMWords() {
+  const MWordsElement = document.getElementById('M-Words');
+
+  for(let word of wordsArray){
+    if(word.startsWith('m')){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      MWordsElement.appendChild(wordElement);
+    }
+  }
+}
 // TODO: Define your own functions here!
 
 function displaySpeechStats() {
   document.getElementById('speech').innerText = speech;
 
   displayLongWords();
+
+  displayShortWords();
+
+  displayMWords();
 
   // TODO: Call your functions here!
 }
