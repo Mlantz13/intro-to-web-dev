@@ -45,17 +45,19 @@ function loadTable() {
   // Create a header row.
   const headerRowElement = document.createElement('tr');
   headerRowElement.appendChild(createElement('th', 'Index'));
-  headerRowElement.appendChild(createElement('th', 'Label'));
-  headerRowElement.appendChild(createElement('th', 'Time'));
+  headerRowElement.appendChild(createElement('th', 'Title'));
+  headerRowElement.appendChild(createElement('th', 'Aired'));
+  headerRowElement.appendChild(createElement('th', 'Seasons'));
   tableElement.appendChild(headerRowElement);
 
   // Iterate over the array and create a table row for each object.
-  for (let i = 0; i < taskArray.length; i++) {
-    const task = taskArray[i];
+  for (let i = 0; i < cartoonArray.length; i++) {
+    const cartoon = cartoonArray[i];
     const rowElement = document.createElement('tr');
     rowElement.appendChild(createElement('td', i));
-    rowElement.appendChild(createElement('td', task.label));
-    rowElement.appendChild(createElement('td', task.time));
+    rowElement.appendChild(createElement('td', cartoon.title));
+    rowElement.appendChild(createElement('td', cartoon.aired));
+    rowElement.appendChild(createElement('td', cartoon.seasons));
     tableElement.appendChild(rowElement);
   }
 
@@ -65,19 +67,19 @@ function loadTable() {
 }
 
 // Displays the name of the shortest task.
-function loadShortestTask(){
+function loadEarliestAirTime(){
   // Assume the first task is shortest
-  let shortestTask = taskArray[0];
+  let EarliestAirTime = cartoonArray[0];
 
   // Starting with the second task, look for a shorter task
-  for (let i = 1; i < taskArray.length; i++) {
-    const task = taskArray[i];
+  for (let i = 1; i < cartoonArray.length; i++) {
+    const cartoon = cartoonArray[i];
     // If this task is shorter than the previous shortest, it's now the shortest
-    if(task.time < shortestTask.time) {
-      shortestTask = task;
+    if(cartoon.aired < EarliestAirTime.Aired) {
+      earliestairtime = cartoon;
     }
   }
-  document.getElementById('shortest-task').innerText = shortestTask.label;
+  document.getElementById('EarliestAirTime-cartoon').innerText = EarliestAirTime.title;
 }
 
 // Helper function that creates an element that contains text content.
